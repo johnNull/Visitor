@@ -33,7 +33,30 @@ public class Node {
 	}
 	
 	public void palindrome() {
-		
+		if (word.length() > 3) {
+			boolean pal = true;
+			for (int i = 0; i <= word.length() / 2; i++) {
+				if (Character.toLowerCase(word.charAt(i)) != Character.toLowerCase(word.charAt(word.length() - 1 - i))) {
+					pal = false;
+					break;
+				}
+			}	
+			if (pal) {
+				word = word.toUpperCase();
+			}
+			if (left != null) {
+				left.palindrome();
+			}
+			if (right != null) {
+				right.palindrome();
+			}
+		}
+		if (left != null) {
+			left.palindrome();
+		}
+		if (right != null) {
+			right.palindrome();
+		}
 	}
 	
 	public void primeLength() {
