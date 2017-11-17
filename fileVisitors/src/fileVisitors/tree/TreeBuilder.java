@@ -3,6 +3,7 @@ package fileVisitors.tree;
 import fileVisitors.store.Results;
 import fileVisitors.util.MyLogger;
 import fileVisitors.util.MyLogger.DebugLevel;
+import fileVisitors.visitor.VisitorI;
 
 public class TreeBuilder {
 	Node head;
@@ -21,7 +22,7 @@ public class TreeBuilder {
 		}
 	}
 	
-	public void accept(Visitor visitor) {
+	public void accept(VisitorI visitor) {
 		visitor.visit(this);
 	}
 }
