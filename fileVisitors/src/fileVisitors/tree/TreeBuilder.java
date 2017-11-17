@@ -9,12 +9,12 @@ public class TreeBuilder {
 	private Node head;
 	private Results out;
 	
-	public TreeBuilder(FileProcessor fp, Results r) {
+	public TreeBuilder(Results r) {
 		head = null;
 		out = r;
 	}
 	
-	public void populate() {
+	public void populate(String word) {
 		if (head == null) {
 			head = new Node(word, out);
 		} else {
@@ -37,6 +37,6 @@ public class TreeBuilder {
 	}
 	
 	public void accept(VisitorI visitor) {
-		this =  visitor.visit(this);
+		visitor.visit(this);
 	}
 }

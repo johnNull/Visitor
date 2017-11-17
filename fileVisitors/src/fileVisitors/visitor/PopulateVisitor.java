@@ -13,14 +13,12 @@ public class PopulateVisitor implements VisitorI {
 		out = r;
 	}
 	
-	public TreeBuilder visit(TreeBuilder tree){
-		TreeBuilder temp = tree;
+	public void visit(TreeBuilder tree){
 		String word = in.readWord();
 		while (word != null) {
-			temp.populate(word);
+			tree.populate(word);
 			word = in.readWord();
 		}
-		return temp;
 	}
 	
 }

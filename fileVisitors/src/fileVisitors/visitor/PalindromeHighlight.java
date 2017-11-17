@@ -10,10 +10,8 @@ public class PalindromeHighlight implements VisitorI {
 		out = r;
 	}
 	
-	public TreeBuilder visit(TreeBuilder tree){
-		TreeBuilder temp = tree;
-		temp.palindrome();
-		return temp;
+	public void visit(TreeBuilder tree){
+		tree.palindrome();
 	}
 	
 }
