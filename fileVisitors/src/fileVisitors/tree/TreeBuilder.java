@@ -6,15 +6,15 @@ import fileVisitors.util.MyLogger.DebugLevel;
 import fileVisitors.visitor.VisitorI;
 
 public class TreeBuilder {
-	Node head;
-	Results out;
+	private Node head;
+	private Results out;
 	
-	public TreeBuilder(Results r) {
+	public TreeBuilder(FileProcessor fp, Results r) {
 		head = null;
 		out = r;
 	}
 	
-	public void populate(String word) {
+	public void populate() {
 		if (head == null) {
 			head = new Node(word, out);
 		} else {
@@ -22,7 +22,21 @@ public class TreeBuilder {
 		}
 	}
 	
+	public void palindrome() {
+		if (head != null) {
+			head.palindrome();
+		}
+	}
+	
+	public void primeLength() {
+		
+	}
+	
+	public void printTree() {
+		
+	}
+	
 	public void accept(VisitorI visitor) {
-		visitor.visit(this);
+		this =  visitor.visit(this);
 	}
 }

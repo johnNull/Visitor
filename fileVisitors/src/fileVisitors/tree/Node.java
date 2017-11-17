@@ -5,10 +5,10 @@ import fileVisitors.util.MyLogger;
 import fileVisitors.util.MyLogger.DebugLevel;
 
 public class Node {
-	String word;
-	Results out;
-	Node left;
-	Node right;
+	private String word;
+	private Results out;
+	private Node left;
+	private Node right;
 	
 	public Node(String s, Results r) {
 		word = s;
@@ -30,5 +30,25 @@ public class Node {
 				right.populate(s);
 			}
 		}
+	}
+	
+	public void palindrome() {
+		
+	}
+	
+	public void primeLength() {
+		
+	}
+	
+	public String toString() {
+		String out = "";
+		if (left != null) {
+			out = left.toString() + "\n";
+		}
+		out = out + word + "\n";
+		if (right != null) {
+			out = out + right.toString() + "\n";
+		}
+		return out;
 	}
 }

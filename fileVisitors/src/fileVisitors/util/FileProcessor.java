@@ -7,8 +7,8 @@ import java.io.IOException;
 import fileVisitors.store.Results;
 
 public class FileProcessor{
-	BufferedReader reader;
-	File file;
+	private BufferedReader reader;
+	private File file;
 	/**
 	 * Constructor. Takes in directory and ensures the file exists.<p>
 	 * https://www.programcreek.com/2011/03/<p>
@@ -37,7 +37,7 @@ public class FileProcessor{
 	 * Returns the next word in the text file. ensures file exists
 	 * @return The next line in the text file
 	 */
-	public synchronized String readWord(){
+	public String readWord(){
 		String word = "";
 		int temp = 0;
 		if(file.exists()){
