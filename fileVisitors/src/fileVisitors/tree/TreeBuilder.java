@@ -1,5 +1,9 @@
 package fileVisitors.tree;
 
+import fileVisitors.store.Results;
+import fileVisitors.util.MyLogger;
+import fileVisitors.util.MyLogger.DebugLevel;
+
 public class TreeBuilder {
 	Node head;
 	Results out;
@@ -15,5 +19,9 @@ public class TreeBuilder {
 		} else {
 			head.populate(word);
 		}
+	}
+	
+	public void accept(Visitor visitor) {
+		visitor.visit(this);
 	}
 }
