@@ -33,7 +33,15 @@ public class TreeBuilder {
 	}
 	
 	public void printTree() {
-		
+		printTree(head);
+	}
+
+	public void printTree(Node n){
+		if(n == null)
+			return;
+		printTree(n.left);
+		System.out.println(n.word + " ");
+		printTree(n.right);
 	}
 	
 	public void accept(VisitorI visitor) {

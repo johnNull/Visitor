@@ -5,10 +5,10 @@ import fileVisitors.util.MyLogger;
 import fileVisitors.util.MyLogger.DebugLevel;
 
 public class Node {
-	private String word;
-	private Results out;
-	private Node left;
-	private Node right;
+	String word;
+	Results out;
+	Node left;
+	Node right;
 	
 	public Node(String s, Results r) {
 		word = s;
@@ -64,14 +64,6 @@ public class Node {
 	}
 	
 	public String toString() {
-		String out = "";
-		if (left != null) {
-			out = left.toString() + "\n";
-		}
-		out = out + word + "\n";
-		if (right != null) {
-			out = out + right.toString() + "\n";
-		}
-		return out;
+		return word;
 	}
 }
