@@ -16,7 +16,8 @@ public class Node {
 	}
 	
 	public void populate(String s) {
-		int comparison = s.compareTo(word);
+		String s1 = s.toLowerCase();
+		int comparison = s1.compareTo(word.toLowerCase());
 		if (comparison < 0) {
 			if (left == null) {
 				left = new Node(s, out);

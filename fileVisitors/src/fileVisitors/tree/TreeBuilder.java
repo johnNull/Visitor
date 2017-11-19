@@ -29,7 +29,25 @@ public class TreeBuilder {
 	}
 	
 	public void primeLength() {
-		
+		primeLength(head);
+	}
+	
+	public void primeLength(Node n) {
+		if(n == null)
+			return;
+		boolean flag = true;
+		double num = n.word.length();
+		primeLength(n.left);
+		if(num == 2)
+			n.word += "-PRIME";
+		if(num % 2 == 0)
+			flag = false;
+		for(int i = 3; i * i <= num; i += 2)
+			if(num % i == 0)
+				flag = false;
+		if(flag)
+				n.word += "-PRIME";
+		primeLength(n.right);
 	}
 	
 	public void printTree() {
