@@ -58,7 +58,7 @@ public class TreeBuilder {
 		if(n == null)
 			return;
 		printTree(n.left);
-		System.out.println(n.word + " ");
+		out.append(n.word + "\n");
 		printTree(n.right);
 	}
 	
