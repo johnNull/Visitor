@@ -26,9 +26,9 @@ public class Driver {
 			Results r = new Results(args[1]);
 			FileProcessor fp = new FileProcessor(args[0], r);
 			TreeBuilder tree = new TreeBuilder(r);
-			PopulateVisitor pop = new PopulateVisitor(fp, r);
+			PopulateVisitor pop = new PopulateVisitor(fp);
 			PrintTree printer = new PrintTree(r);
-			PalindromeHighlight pal = new PalindromeHighlight(r);
+			PalindromeHighlight pal = new PalindromeHighlight();
 			PrimeLength pl = new PrimeLength();
 			tree.accept(pop);
 			tree.accept(pal);

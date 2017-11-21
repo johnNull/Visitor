@@ -4,12 +4,11 @@ import fileVisitors.tree.TreeBuilder;
 import fileVisitors.store.Results;
 
 public class PalindromeHighlight implements VisitorI {
-	private Results out;
 	
-	public PalindromeHighlight(Results r) {
-		out = r;
-	}
-	
+	/**
+	 * Capitalize all instances of palindromes in tree
+	 * @param tree Tree to search for palindromes
+	 */
 	public void visit(TreeBuilder tree){
 		tree.palindrome();
 	}

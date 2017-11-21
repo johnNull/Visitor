@@ -9,11 +9,19 @@ public class TreeBuilder {
 	private Node head;
 	private Results out;
 	
+	/**
+	 * Constructor for TreeManager
+	 * @param r Results instance for printing
+	 */
 	public TreeBuilder(Results r) {
 		head = null;
 		out = r;
 	}
 	
+	/**
+	 * Populate the tree with a Node
+	 * @param word String for which to create Node or add count to
+	 */
 	public void populate(String word) {
 		if (head == null) {
 			head = new Node(word, out);
@@ -22,16 +30,26 @@ public class TreeBuilder {
 		}
 	}
 	
+	/**
+	 * Call the Node palindrome method to capitalize palindromes
+	 */
 	public void palindrome() {
 		if (head != null) {
 			head.palindrome();
 		}
 	}
 	
+	/**
+	 * Call the recursive primeLength method to mark prime length strings.
+	 */
 	public void primeLength() {
 		primeLength(head);
 	}
 	
+	/**
+	 * Append "-PRIME" to all Strings of prime length
+	 * @param n Node used to check and for recursive traversal
+	 */
 	public void primeLength(Node n) {
 		if(n == null)
 			return;
@@ -50,10 +68,17 @@ public class TreeBuilder {
 		primeLength(n.right);
 	}
 	
+	/**
+	 * Calls the recursive printTree to print the tree alphanumerically
+	 */
 	public void printTree() {
 		printTree(head);
 	}
 
+	/**
+	 * Appends alphanumerically to Results instance
+	 * @param n Node to get string from and use for recursive traversal
+	 */
 	public void printTree(Node n){
 		if(n == null)
 			return;
@@ -62,6 +87,10 @@ public class TreeBuilder {
 		printTree(n.right);
 	}
 	
+	/**
+	 * Allow Visitors to alter this structure
+	 * @param visitor Visitor to alter tree elements 
+	 */
 	public void accept(VisitorI visitor) {
 		visitor.visit(this);
 	}

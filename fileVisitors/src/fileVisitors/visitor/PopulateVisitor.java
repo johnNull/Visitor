@@ -8,11 +8,18 @@ public class PopulateVisitor implements VisitorI {
 	private FileProcessor in;
 	private Results out;
 	
-	public PopulateVisitor(FileProcessor fp, Results r) {
+	/**
+	 * Constructor for PopulateVisitor Visitor
+	 * @param fp FileProcessor to get input
+	 */
+	public PopulateVisitor(FileProcessor fp) {
 		in = fp;
-		out = r;
 	}
 	
+	/**
+	 * Fills the tree with nodes from file
+	 * @param tree Tree to fill
+	 */
 	public void visit(TreeBuilder tree){
 		String word = in.readWord();
 		while (word != null) {
