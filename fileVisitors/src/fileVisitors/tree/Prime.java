@@ -20,6 +20,7 @@ public class Prime {
 	 * Check to see if String length is prime
 	 * @param str, String to check
 	 * @return String with or without -PRIME appended
+	 * https://www.mkyong.com/java/how-to-determine-a-prime-number-in-java/
 	 */
 	public String isPrime(String str) {
 		String word = str;
