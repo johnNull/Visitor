@@ -11,6 +11,10 @@ public class PalindromeHighlight implements VisitorI {
 	private Results out;
 	private Palindrome p;
 	
+	/**
+	 * Constructor for PalindromeHighlight Visitor
+	 * @param r Results instance to append to and print from
+	 */
 	public PalindromeHighlight(Results r) {
 		out = r;
 		out.writeToScreen("Creating PalindromeHighlight", MyLogger.DebugLevel.CONSTRUCTOR);

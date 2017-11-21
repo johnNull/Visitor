@@ -7,11 +7,20 @@ import fileVisitors.util.MyLogger.DebugLevel;
 public class Prime {
 	private Results out;
 	
+	/**
+	 * Constructor for Prime
+	 * @param r Results instance to print to file
+	 */
 	public Prime(Results r) {
 		out = r;
 		out.writeToScreen("Creating Prime", MyLogger.DebugLevel.CONSTRUCTOR);
 	}
 	
+	/**
+	 * Check to see if String length is prime
+	 * @param str, String to check
+	 * @return String with or without -PRIME appended
+	 */
 	public String isPrime(String str) {
 		String word = str;
 		boolean flag = true;
@@ -32,6 +41,10 @@ public class Prime {
 		return word;
 	}
 	
+	/**
+	 * Traverse tree to search for prime length Strings
+	 * @param n Node to check and use for traversal
+	 */
 	public void primeSearch(Node n) {
 		if (n != null) {
 			String word = isPrime(n.getWord());
