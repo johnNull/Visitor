@@ -31,60 +31,10 @@ public class TreeBuilder {
 	}
 	
 	/**
-	 * Call the Node palindrome method to capitalize palindromes
+	 * Get the head of the tree
 	 */
-	public void palindrome() {
-		if (head != null) {
-			head.palindrome();
-		}
-	}
-	
-	/**
-	 * Call the recursive primeLength method to mark prime length strings.
-	 */
-	public void primeLength() {
-		primeLength(head);
-	}
-	
-	/**
-	 * Append "-PRIME" to all Strings of prime length
-	 * @param n Node used to check and for recursive traversal
-	 */
-	public void primeLength(Node n) {
-		if(n == null)
-			return;
-		boolean flag = true;
-		double num = n.word.length();
-		primeLength(n.left);
-		if(num == 2)
-			n.word += "-PRIME";
-		if(num % 2 == 0)
-			flag = false;
-		for(int i = 3; i * i <= num; i += 2)
-			if(num % i == 0)
-				flag = false;
-		if(flag)
-				n.word += "-PRIME";
-		primeLength(n.right);
-	}
-	
-	/**
-	 * Calls the recursive printTree to print the tree alphanumerically
-	 */
-	public void printTree() {
-		printTree(head);
-	}
-
-	/**
-	 * Appends alphanumerically to Results instance
-	 * @param n Node to get string from and use for recursive traversal
-	 */
-	public void printTree(Node n){
-		if(n == null)
-			return;
-		printTree(n.left);
-		out.append(n.word + "\n");
-		printTree(n.right);
+	public Node getHead() {
+		return head;
 	}
 	
 	/**

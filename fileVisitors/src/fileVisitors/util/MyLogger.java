@@ -3,13 +3,13 @@ package fileVisitors.util;
 public class MyLogger{
 
     /*DEBUG_VALUE=4 [Print to stdout everytime a constructor is called]
-      DEBUG_VALUE=3 [Print to stdout everytime ???]
-      DEBUG_VALUE=2 [Print to stdout everytime a line is read from the input file]
-      DEBUG_VALUE=1 [Print to stdout everytime ???]
+      DEBUG_VALUE=3 [Print to stdout everytime a palindrome is found]
+      DEBUG_VALUE=2 [Print to stdout everytime a word is read from the input file]
+      DEBUG_VALUE=1 [Print to stdout everytime a word with prime length is found]
       DEBUG_VALUE=0 [No output should be printed from the application to stdout. It is ok to write to the output file though" ]
     */
 
-    public static enum DebugLevel {RELEASE, WORD_REMOVED, READ_LINE, IN_RUN, CONSTRUCTOR
+    public static enum DebugLevel {RELEASE, PRIME, READ_WORD, PALINDROME, CONSTRUCTOR
                                    };
 
     private static DebugLevel debugLevel;
@@ -21,9 +21,9 @@ public class MyLogger{
     public static void setDebugValue (int levelIn) {
 	switch (levelIn) {
 	  	case 4: debugLevel = DebugLevel.CONSTRUCTOR; break;
-	  	case 3: debugLevel = DebugLevel.IN_RUN; break;
-		case 2: debugLevel = DebugLevel.READ_LINE; break;
-		case 1: debugLevel = DebugLevel.WORD_REMOVED; break;
+	  	case 3: debugLevel = DebugLevel.PALINDROME; break;
+		case 2: debugLevel = DebugLevel.READ_WORD; break;
+		case 1: debugLevel = DebugLevel.PRIME; break;
 	  	case 0: debugLevel = DebugLevel.RELEASE; break;
 	}
     }

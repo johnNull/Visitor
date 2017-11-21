@@ -1,8 +1,14 @@
 package fileVisitors.driver;
 
 import fileVisitors.tree.TreeBuilder;
-import fileVisitors.visitor.*;
-import fileVisitors.util.*;
+import fileVisitors.visitor.VisitorI;
+import fileVisitors.visitor.PopulateVisitor;
+import fileVisitors.visitor.PrintTree;
+import fileVisitors.visitor.PalindromeHighlight;
+import fileVisitors.visitor.PrimeLength;
+import fileVisitors.util.FileProcessor;
+import fileVisitors.util.MyLogger;
+import fileVisitors.util.MyLogger.DebugLevel;
 import fileVisitors.store.Results;
 
 public class Driver {
@@ -26,10 +32,10 @@ public class Driver {
 			Results r = new Results(args[1]);
 			FileProcessor fp = new FileProcessor(args[0], r);
 			TreeBuilder tree = new TreeBuilder(r);
-			PopulateVisitor pop = new PopulateVisitor(fp);
-			PrintTree printer = new PrintTree(r);
-			PalindromeHighlight pal = new PalindromeHighlight();
-			PrimeLength pl = new PrimeLength();
+			VisitorI pop = new PopulateVisitor(fp, r);
+			VisitorI printer = new PrintTree(r);
+			VisitorI pal = new PalindromeHighlight(r);
+			VisitorI pl = new PrimeLength(r);
 			tree.accept(pop);
 			tree.accept(pal);
 			tree.accept(pl);

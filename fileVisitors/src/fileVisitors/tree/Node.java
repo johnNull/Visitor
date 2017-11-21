@@ -5,10 +5,10 @@ import fileVisitors.util.MyLogger;
 import fileVisitors.util.MyLogger.DebugLevel;
 
 public class Node {
-	String word;
-	Results out;
-	Node left;
-	Node right;
+	private String word;
+	private Results out;
+	private Node left;
+	private Node right;
 	
 	/**
 	 * Constructor for Node in BST
@@ -18,6 +18,22 @@ public class Node {
 	public Node(String s, Results r) {
 		word = s;
 		out = r;
+	}
+	
+	public String getWord() {
+		return word;
+	}
+	
+	public void setWord(String str) {
+		word = str;
+	}
+	
+	public Node getLeft() {
+		return left;
+	}
+	
+	public Node getRight() {
+		return right;
 	}
 	
 	/**
@@ -40,35 +56,4 @@ public class Node {
 			}
 		}
 	}
-	
-	/**
-	 * Makes all stored Strings that are palindromes all uppercase
-	 */
-	public void palindrome() {
-		if (word.length() > 3) {
-			boolean pal = true;
-			for (int i = 0; i <= word.length() / 2; i++) {
-				if (Character.toLowerCase(word.charAt(i)) != Character.toLowerCase(word.charAt(word.length() - 1 - i))) {
-					pal = false;
-					break;
-				}
-			}	
-			if (pal) {
-				word = word.toUpperCase();
-			}
-			if (left != null) {
-				left.palindrome();
-			}
-			if (right != null) {
-				right.palindrome();
-			}
-		}
-		if (left != null) {
-			left.palindrome();
-		}
-		if (right != null) {
-			right.palindrome();
-		}
-	}
-	
 }

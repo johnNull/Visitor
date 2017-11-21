@@ -3,6 +3,8 @@ package fileVisitors.visitor;
 import fileVisitors.tree.TreeBuilder;
 import fileVisitors.util.FileProcessor;
 import fileVisitors.store.Results;
+import fileVisitors.util.MyLogger;
+import fileVisitors.util.MyLogger.DebugLevel;
 
 public class PopulateVisitor implements VisitorI {
 	private FileProcessor in;
@@ -12,8 +14,10 @@ public class PopulateVisitor implements VisitorI {
 	 * Constructor for PopulateVisitor Visitor
 	 * @param fp FileProcessor to get input
 	 */
-	public PopulateVisitor(FileProcessor fp) {
+	public PopulateVisitor(FileProcessor fp, Results r) {
 		in = fp;
+		out = r;
+		out.writeToScreen("Creating PopulateVisitor", MyLogger.DebugLevel.CONSTRUCTOR);
 	}
 	
 	/**
