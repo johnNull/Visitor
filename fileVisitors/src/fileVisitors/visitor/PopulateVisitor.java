@@ -27,6 +27,7 @@ public class PopulateVisitor implements VisitorI {
 	public void visit(TreeBuilder tree){
 		String word = in.readWord();
 		while (word != null) {
+			out.writeToScreen("Word read - " + word, MyLogger.DebugLevel.READ_WORD);
 			tree.populate(word);
 			word = in.readWord();
 		}

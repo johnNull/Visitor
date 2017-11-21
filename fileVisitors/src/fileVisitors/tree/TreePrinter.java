@@ -9,6 +9,7 @@ public class TreePrinter {
 
 	public TreePrinter(Results r) {
 		out = r;
+		out.writeToScreen("Creating TreePrinter", MyLogger.DebugLevel.CONSTRUCTOR);
 	}
 
 	public void printTree(Node n) {

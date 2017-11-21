@@ -18,6 +18,7 @@ public class Node {
 	public Node(String s, Results r) {
 		word = s;
 		out = r;
+		out.writeToScreen("Creating Node", MyLogger.DebugLevel.CONSTRUCTOR);
 	}
 	
 	public String getWord() {

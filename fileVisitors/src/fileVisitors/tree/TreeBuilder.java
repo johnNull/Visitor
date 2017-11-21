@@ -16,6 +16,7 @@ public class TreeBuilder {
 	public TreeBuilder(Results r) {
 		head = null;
 		out = r;
+		out.writeToScreen("Creating TreeBuilder", MyLogger.DebugLevel.CONSTRUCTOR);
 	}
 	
 	/**

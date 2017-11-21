@@ -9,6 +9,7 @@ public class Palindrome {
 	
 	public Palindrome(Results r) {
 		out = r;
+		out.writeToScreen("Creating Palindrome", MyLogger.DebugLevel.CONSTRUCTOR);
 	}
 	
 	public boolean isPalindrome(String word) {
@@ -29,6 +30,7 @@ public class Palindrome {
 	public void palindromeSearch(Node n) {
 		if (n != null) {
 			if (isPalindrome(n.getWord())) {
+				out.writeToScreen("Palindrome Found - " + n.getWord(), MyLogger.DebugLevel.PALINDROME);
 				n.setWord(n.getWord().toUpperCase());
 			}
 			palindromeSearch(n.getLeft());
