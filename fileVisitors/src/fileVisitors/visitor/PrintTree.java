@@ -2,12 +2,14 @@ package fileVisitors.visitor;
 
 import fileVisitors.tree.TreeBuilder;
 import fileVisitors.tree.Node;
+import fileVisitors.tree.TreePrinter;
 import fileVisitors.store.Results;
 import fileVisitors.util.MyLogger;
 import fileVisitors.util.MyLogger.DebugLevel;
 
 public class PrintTree implements VisitorI {
 	private Results out;
+	private TreePrinter tp;
 	
 	/**
 	 * Constructor for PrintTree Visitor
@@ -16,6 +18,7 @@ public class PrintTree implements VisitorI {
 	public PrintTree(Results r){
 		out = r;
 		out.writeToScreen("Creating PrintTree", MyLogger.DebugLevel.CONSTRUCTOR);
+		tp = new TreePrinter(out);
 	}
 
 	/**
@@ -24,16 +27,7 @@ public class PrintTree implements VisitorI {
 	 */
 	public void visit(TreeBuilder tree){
 		Node head = tree.getHead();
-		printTree(head);
+		tp.printTree(head);
 		out.writeSchedulesToFile();
-	}
-
-	public void printTree(Node n) {
-		if (n != null) {
-			printTree(n.getLeft());
-			String output = n.getWord() + "\n";
-			out.append(output);
-			printTree(n.getRight());
-		}
 	}
 }

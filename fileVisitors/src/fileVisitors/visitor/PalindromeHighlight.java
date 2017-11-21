@@ -23,16 +23,6 @@ public class PalindromeHighlight implements VisitorI {
 	 */
 	public void visit(TreeBuilder tree){
 		Node head = tree.getHead();
-		palindromeSearch(head);
-	}
-	
-	public void palindromeSearch(Node n) {
-		if (n != null) {
-			if (p.isPalindrome(n.getWord())) {
-				n.setWord(n.getWord().toUpperCase());
-			}
-			palindromeSearch(n.getLeft());
-			palindromeSearch(n.getRight());
-		}
+		p.palindromeSearch(head);
 	}
 }

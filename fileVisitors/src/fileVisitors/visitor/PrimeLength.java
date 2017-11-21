@@ -19,15 +19,6 @@ public class PrimeLength implements VisitorI {
 	
 	public void visit(TreeBuilder tree){
 		Node head = tree.getHead();
-		primeSearch(head);
-	}
-	
-	public void primeSearch(Node n) {
-		if (n != null) {
-			String word = p.isPrime(n.getWord());
-			n.setWord(word);
-			primeSearch(n.getLeft());
-			primeSearch(n.getRight());
-		}
+		p.primeSearch(head);
 	}
 }

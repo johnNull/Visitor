@@ -26,4 +26,13 @@ public class Prime {
 				word += "-PRIME";
 		return word;
 	}
+	
+	public void primeSearch(Node n) {
+		if (n != null) {
+			String word = isPrime(n.getWord());
+			n.setWord(word);
+			primeSearch(n.getLeft());
+			primeSearch(n.getRight());
+		}
+	}
 }

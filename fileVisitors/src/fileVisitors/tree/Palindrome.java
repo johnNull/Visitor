@@ -25,4 +25,14 @@ public class Palindrome {
 			return false;
 		}
 	}
+	
+	public void palindromeSearch(Node n) {
+		if (n != null) {
+			if (isPalindrome(n.getWord())) {
+				n.setWord(n.getWord().toUpperCase());
+			}
+			palindromeSearch(n.getLeft());
+			palindromeSearch(n.getRight());
+		}
+	}
 }
